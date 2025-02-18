@@ -124,13 +124,12 @@ nav a:hover {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 1rem;
+    padding: 2rem 0;
 }
 
 .project-card {
-    background: #ffffff;
+    background: white;
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -141,66 +140,73 @@ nav a:hover {
     transform: translateY(-5px);
 }
 
+.project-card.featured {
+    border-left: 4px solid var(--primary-color);
+}
+
 .project-card h3 {
-    color: #333;
-    margin-bottom: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
 }
 
-.project-tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+.project-duration {
+    color: #666;
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
 }
 
-.tech-tag {
-    background: #f0f0f0;
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.project-details {
+.project-content {
     display: grid;
     gap: 1.5rem;
 }
 
-.feature-section h4 {
-    color: #444;
-    margin-bottom: 0.8rem;
+.project-description {
+    line-height: 1.6;
+}
+
+.tech-stack h4,
+.key-features h4,
+.technical-highlights h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
-.feature-section ul {
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background: #f0f0f0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.key-features ul,
+.technical-highlights ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-.feature-section ul li {
-    margin-bottom: 0.5rem;
+.key-features li,
+.technical-highlights li {
+    margin-bottom: 0.8rem;
     padding-left: 1.5rem;
     position: relative;
 }
 
-.feature-section ul li::before {
-    content: "•";
-    color: #007bff;
+.key-features li:before,
+.technical-highlights li:before {
+    content: "→";
     position: absolute;
     left: 0;
-}
-
-.project-links {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.project-links a {
-    text-decoration: none;
     color: var(--primary-color);
-    font-weight: 500;
 }
 
 /* Contact Section */
@@ -296,12 +302,16 @@ footer {
         padding: 40px 20px;
     }
 
-    .project-tech-stack {
-        flex-direction: column;
+    .project-card {
+        padding: 1.5rem;
     }
-    
-    .tech-tag {
-        display: inline-block;
-        margin-bottom: 0.3rem;
+
+    .tech-tags {
+        gap: 0.3rem;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
     }
 }
